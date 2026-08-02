@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Aplicación de gestión de tareas" />
+  <title>Mis Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Mis Tareas</h1>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item active">
+          <i class="fas fa-tasks"></i>
+          <span>Mis Tareas</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+          <i class="fas fa-user"></i>
+          <span>Mi Perfil</span>
+        </a>
+        <a href="admin.html" class="nav-item admin-item" style="display: none;">
+          <i class="fas fa-users-cog"></i>
+          <span>Administración</span>
+        </a>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <i class="fas fa-user-circle"></i>
+          <span id="userName">Usuario</span>
+        </div>
+        <a href="perfil.html" class="nav-item">
+          <i class="fas fa-cog"></i>
+          <span>Configuración</span>
+        </a>
+        <a href="#" class="nav-item" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Cerrar Sesión</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay para móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-container">
+        <div class="content-header">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h2>Mis Tareas</h2>
+          <div class="stats">
+            <span class="stat">Pendientes: <span id="pendientes">0</span></span>
+            <span class="stat">Completadas: <span id="completadas">0</span></span>
+          </div>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <form class="tarea-form" id="tareaForm">
+          <input
+            type="text"
+            id="tituloInput"
+            placeholder="Título de la tarea..."
+            class="input-titulo"
+            required
+          />
+          <textarea
+            id="descripcionInput"
+            placeholder="Descripción (opcional)..."
+            class="input-descripcion"
+            rows="2"
+          ></textarea>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Agregar Tarea
+          </button>
+        </form>
+
+        <div id="cargando" class="cargando" style="display: none;">Cargando tareas...</div>
+        <div id="sin-tareas" class="sin-tareas" style="display: none;">
+          No hay tareas. ¡Crea tu primera tarea!
+        </div>
+        <div id="tareas-lista" class="tareas-lista"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

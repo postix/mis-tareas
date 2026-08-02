@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Administración - Mis Tareas" />
+  <title>Administración - Mis Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Mis Tareas</h1>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <i class="fas fa-tasks"></i>
+          <span>Mis Tareas</span>
+        </a>
+        <a href="perfil.html" class="nav-item">
+          <i class="fas fa-user"></i>
+          <span>Mi Perfil</span>
+        </a>
+        <a href="admin.html" class="nav-item active">
+          <i class="fas fa-users-cog"></i>
+          <span>Administración</span>
+        </a>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <i class="fas fa-user-circle"></i>
+          <span id="userName">Admin</span>
+        </div>
+        <a href="perfil.html" class="nav-item">
+          <i class="fas fa-cog"></i>
+          <span>Configuración</span>
+        </a>
+        <a href="#" class="nav-item" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Cerrar Sesión</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay para móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-container">
+        <div class="content-header">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h2>Administración de Usuarios</h2>
+          <button id="crearUsuarioBtn" class="btn btn-primary">
+            <i class="fas fa-user-plus"></i> Crear Usuario
+          </button>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="success" class="success" style="display: none;"></div>
+
+        <div id="cargando" class="cargando" style="display: none;">Cargando usuarios...</div>
+
+        <div class="usuarios-lista" id="usuarios-lista"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal para crear/editar usuario -->
+  <div id="usuarioModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Crear Usuario</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form class="modal-form" id="usuarioForm">
+        <input type="hidden" id="userId">
+        
+        <div class="form-group">
+          <label for="modalUsername">Usuario *</label>
+          <input type="text" id="modalUsername" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modalPassword">Contraseña *</label>
+          <input type="password" id="modalPassword" name="password" required minlength="6">
+        </div>
+
+        <div class="form-group">
+          <label for="modalEmail">Email</label>
+          <input type="email" id="modalEmail" name="email">
+        </div>
+
+        <div class="form-group">
+          <label for="modalTelefono">Teléfono</label>
+          <input type="tel" id="modalTelefono" name="telefono">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="modalEsAdmin" name="es_admin">
+            Es Administrador
+          </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="modalActivo" name="activo" checked>
+            Usuario Activo
+          </label>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" class="btn btn-secondary" id="cancelModal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

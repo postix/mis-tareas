@@ -1,0 +1,82 @@
+.perfil-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.perfil-section {
+  background: #40414f;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #4d4d4f;
+}
+
+.perfil-section h3 {
+  color: #ececf1;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #4d4d4f;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #ececf1;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 12px;
+  background: #343541;
+  border: 1px solid #4d4d4f;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ececf1;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #10a37f;
+}
+
+.form-group input:disabled {
+  background: #2a2b32;
+  cursor: not-allowed;
+  color: #8e8ea0;
+}
+
+.form-group input::placeholder {
+  color: #8e8ea0;
+}
+
+.success {
+  background: #1a5c1a;
+  color: #71f871;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #1d7f1d;
+}
+
+@media (max-width: 768px) {
+  .perfil-section {
+    padding: 20px;
+  }
+
+  .perfil-section h3 {
+    font-size: 1.2rem;
+  }
+}

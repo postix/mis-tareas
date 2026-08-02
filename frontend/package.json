@@ -1,0 +1,12 @@
+{
+  "name": "mis-tareas-frontend",
+  "version": "1.0.0",
+  "description": "Frontend ChatGPT style para aplicación de tareas",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

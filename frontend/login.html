@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Login - Mis Tareas" />
+  <title>Login - Mis Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Mis Tareas</h1>
+        <p>Inicia sesión para continuar</p>
+      </div>
+
+      <div id="error" class="error" style="display: none;"></div>
+
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingresa tu usuario"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Ingresa tu contraseña"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="loginBtn">
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p>Usuario administrador: cpadilla / 123456789</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
